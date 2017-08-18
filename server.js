@@ -6,19 +6,39 @@ var app = express();
 app.use(morgan('combined'));
 
 
-var ArticleOne ={
-    title:"Article one | Immanuel Savio",
-    heading: "Article one",
-    date:"August 16 2017",
-    content: `<p>
-                    This is the content of Article one.This is the content of Article one.This is the content of Article one.This is the content of Article one.This is the content of Article one.This is the content of Article one.This is the content of Article one.This is the content of Article one.This is the content of Article one
-                </p>
-                <p>
-                    This is the content of Article one.This is the content of Article one.This is the content of Article one.This is the content of Article one.This is the content of Article one.This is the content of Article one.This is the content of Article one.This is the content of Article one.This is the content of Article one
-                </p>
-                <p>
-                    This is the content of Article one.This is the content of Article one.This is the content of Article one.This is the content of Article one.This is the content of Article one.This is the content of Article one.This is the content of Article one.This is the content of Article one.This is the content of Article one
-                </p>`
+var articles = {
+    'article-one' : {
+        title:"Article one | Immanuel Savio",
+        heading: "Article one",
+        date:"August 16 2017",
+        content: `<p>
+                        This is the content of Article one.This is the content of Article one.This is the content of Article one.This is the content of Article one.This is the content of Article one.This is the content of Article one.This is the content of Article one.This is the content of Article one.This is the content of Article one
+                    </p>
+                    <p>
+                        This is the content of Article one.This is the content of Article one.This is the content of Article one.This is the content of Article one.This is the content of Article one.This is the content of Article one.This is the content of Article one.This is the content of Article one.This is the content of Article one
+                    </p>
+                    <p>
+                        This is the content of Article one.This is the content of Article one.This is the content of Article one.This is the content of Article one.This is the content of Article one.This is the content of Article one.This is the content of Article one.This is the content of Article one.This is the content of Article one
+                    </p>`
+    },
+    'aticle-two' : {
+        title:"Article two | Immanuel Savio",
+        heading: "Article two",
+        date:"August 16 2017",
+        content: `<p>
+                        This is the content of Article two.
+                    </p>`
+        
+    },
+    'article-three' : {
+        title:"Article three | Immanuel Savio",
+        heading: "Article three",
+        date:"August 16 2017",
+        content: `<p>
+                        This is the content of Article three.
+                    </p>`
+        
+    }
 };
 
 function createTemplate(data) {
@@ -61,8 +81,11 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/article-one', function (req, res) {
-    res.send(createTemplate(ArticleOne));
+app.get('/:articleName', function (req, res) {
+    res.send(createTemplate(articles[ArticleName]));
+    var articleName = req.params.articleName;
+    
+    
 });
 
 app.get('/article-two', function (req, res) {
