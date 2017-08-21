@@ -85,13 +85,7 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-`var ctr=0;
-app.get('/counter', function (req, res) {
-    ctr=ctr+1;
-  res.send(ctr.toString());
-})`;
-
-app.get('/:articleName', function (req, res) {
+app.get('/:articlename', function (req, res) {
     res.send(createTemplate(articles[articleName]));
     
     var articleName = req.params.articleName;
