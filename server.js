@@ -91,10 +91,11 @@ app.get('/', function (req, res) {
 });
 
 var counter=0;
-
+var count;
 app.get('/counter' , function  (req,res){
     counter = counter + 1;
-    res.send(counter,toString());
+    count = counter.toString();
+    res.send(count);
 });
 
 app.get('/:articleName', function (req, res) {
