@@ -21,7 +21,7 @@ var articles = {
                         This is the content of Article one.This is the content of Article one.This is the content of Article one.This is the content of Article one.This is the content of Article one.This is the content of Article one.This is the content of Article one.This is the content of Article one.This is the content of Article one
                     </p>`
     },
-    'aticle-two' : {
+    'article-two' : {
         title:"Article two | Immanuel Savio",
         heading: "Article two",
         date:"August 16 2017",
