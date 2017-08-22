@@ -2,8 +2,13 @@ console.log('Loaded!');
 var element = document.getElementById('main-text');
 element.innerHTML = 'NewValue';
 var element = document.getElementById('madi');
-var interval = setInterval(moveleft , 100);
+
+var marginLeft = 0;
+function moveRight(){
+    marginLeft  = marginLeft + 10;
+    img.style.marginLeft = marginLeft + "px";   
+}
 madi.onclick = function() {
-    madi.style.marginleft = "100px";
+   var interval = setInterval(moveRight , 100);
     
 };
